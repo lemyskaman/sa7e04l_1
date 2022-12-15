@@ -6,8 +6,8 @@
 .def V1 = R17 ; referencia usar en puerto de salida para v1 abierta
 .def V2 = R18 ; referencia a usar en puerto de salida para v2 abierta
 .def SENSORS = R19 ; referencia a registro cuyo valor binario de 2 bits sera usado para almacenar estado de sensores, 
-.def NL = R24
-.def NRAYA = R25
+.def NL = R24 ; referencia a registro que se usara para dato de comprobacion de nivel bajo
+.def NRAYA = R25 ; referencia 
 .def NH = R26
 .def L = R21 ; referencia a registro con dato para mostrar L
 .def RAYA = R22 ; referencia a registro con dato para mostrar -
@@ -51,8 +51,6 @@ BREQ ACCIONL;           saltamos a ejecutar rutina de nivel bajo
 CP SENSORS, NRAYA;      si al sensor de nivel bajo esta UNICAMENTE ACTIVO 
 BREQ ACCIONRAYA;		saltamos a ejectura rutina de nivel medio
 RJMP INICIO;
-
-
 
 ACCIONL:
 OUT PORTB, V1; abrimos v1 cerramos v2
