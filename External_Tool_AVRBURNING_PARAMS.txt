@@ -1,0 +1,5 @@
+click en Tools  -> External tools -> add y en las casillas de parametros colocar lo siguiente:
+
+tilte: avrdude
+command: avrdude.exe (seleccionar dentro de la carpeta avrdude dentro de la carpeta del proyecto )
+Arguments: -F -U "flash:w:$(ProjectDir)Debug\$(ItemFileName).hex:i"  -v -p atmega328 -b 115200 -c arduino -P "PUERTO"  (donde PUERTO ES EL COM en el que Guindows asigno el arduino)
